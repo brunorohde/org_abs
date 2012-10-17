@@ -1,0 +1,28 @@
+#N canvas 566 287 450 300 10;
+#X obj 52 193 shell;
+#X obj 236 263 outlet;
+#X text 283 262 bang quando criado;
+#X obj 52 -16 inlet;
+#X msg 109 158 open -n /Applications/Pd-extended.app \$1;
+#X msg 52 118 open -n /Applications/Pd-extended.app;
+#X obj 52 263 print TERMINAL_SHELL;
+#X obj 52 45 route bang;
+#X obj 109 71 tosymbol;
+#X text 97 -15 bang - abre novo pd;
+#X text 97 -1 caminho - abre patch em novo pd;
+#N canvas 472 234 416 201 LEIA-ME 0;
+#X text 35 36 -- organic_abs 0.1 - abstrações orgânicas - 2012;
+#X text 35 136 - licença GPLv3 - http://www.gnu.org/copyleft/gpl.txt
+;
+#X text 35 66 - conjunto de abstrações para controle de áudio e vídeo
+\, desenvolvido por brunorohde (brunorohde.wordpress.com / brunorohde@gmail.com)
+\, membro do Grupo de Pesquisa Poéticas Tecnológicas - IHAC/UFBA;
+#X restore 364 -5 pd LEIA-ME;
+#X connect 0 0 6 0;
+#X connect 0 1 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 7 0 5 0;
+#X connect 7 1 8 0;
+#X connect 8 0 4 0;

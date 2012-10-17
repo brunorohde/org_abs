@@ -1,0 +1,38 @@
+#N canvas 880 341 450 300 10;
+#X obj 107 37 inlet;
+#X obj 107 271 outlet;
+#X obj 107 246 line;
+#X msg 107 225 \$1 \$2;
+#X obj 107 204 pack f f;
+#X floatatom 192 83 5 0 0 0 - #0-visorin #0-visorout;
+#X text 172 59 ATRASO (msec);
+#X obj 280 178 loadbang;
+#X obj 280 218 s \$0-visorin;
+#X obj 152 182 r \$0-visorout;
+#X obj 280 38 inlet;
+#X text 325 38 entrada de valor;
+#X msg 280 198 500;
+#X obj 107 162 scale.linear 0 1 0 1;
+#X obj 146 126 unpack f f;
+#X obj 146 37 inlet;
+#N canvas 472 234 416 201 LEIA-ME 0;
+#X text 35 36 -- organic_abs 0.1 - abstrações orgânicas - 2012;
+#X text 35 136 - licença GPLv3 - http://www.gnu.org/copyleft/gpl.txt
+;
+#X text 35 66 - conjunto de abstrações para controle de áudio e vídeo
+\, desenvolvido por brunorohde (brunorohde.wordpress.com / brunorohde@gmail.com)
+\, membro do Grupo de Pesquisa Poéticas Tecnológicas - IHAC/UFBA;
+#X restore 17 13 pd LEIA-ME;
+#X connect 0 0 13 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 7 0 12 0;
+#X connect 9 0 4 1;
+#X connect 10 0 8 0;
+#X connect 12 0 8 0;
+#X connect 13 0 4 0;
+#X connect 14 0 13 3;
+#X connect 14 1 13 4;
+#X connect 15 0 14 0;
+#X coords 0 -1 1 1 36 22 2 190 80;

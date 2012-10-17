@@ -1,0 +1,22 @@
+#N canvas 589 206 317 301 10;
+#X obj 146 106 limiter~;
+#X obj 106 106 z~ 64;
+#X obj 106 136 *~;
+#X obj 106 162 hip~ 1;
+#X obj 106 49 inlet~;
+#X obj 106 226 outlet~;
+#X text 235 9 lib: zexy;
+#N canvas 472 234 416 201 LEIA-ME 0;
+#X text 35 36 -- organic_abs 0.1 - abstrações orgânicas - 2012;
+#X text 35 136 - licença GPLv3 - http://www.gnu.org/copyleft/gpl.txt
+;
+#X text 35 66 - conjunto de abstrações para controle de áudio e vídeo
+\, desenvolvido por brunorohde (brunorohde.wordpress.com / brunorohde@gmail.com)
+\, membro do Grupo de Pesquisa Poéticas Tecnológicas - IHAC/UFBA;
+#X restore 18 14 pd LEIA-ME;
+#X connect 0 0 2 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 4 0 0 0;
