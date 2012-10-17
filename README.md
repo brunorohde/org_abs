@@ -1,9 +1,9 @@
-organic_abs 0.1 - abstrações orgânicas para puredata
+organic_abs 0.1 - abstrações organicas para puredata
 
 
-Conjunto de abstrações modulares para controle de áudio e vídeo no ambiente puredata. Versão atual 0.1 - outubro de 2012
+Conjunto de abstrações modulares para controle de audio e video no ambiente puredata. Versao atual 0.1 - outubro de 2012
 
 Desenvolvido por brunorohde (brunorohde.wordpress.com)
 
 
-Conteudo disponível sob Licença GPLv3 - http://www.gnu.org/copyleft/gpl.txt
+Conteudo disponível sob Licenca GPLv3 - http://www.gnu.org/copyleft/gpl.txt
