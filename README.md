@@ -5,5 +5,7 @@ Conjunto de abstracoes modulares para controle de audio e video no ambiente pure
 
 Desenvolvido por brunorohde (brunorohde.wordpress.com)
 
+Requer o Pd-Extended 0.42.5 (ou superior)
 
-Conteudo dispon’vel sob Licenca GPLv3 - http://www.gnu.org/copyleft/gpl.txt
+
+Conteudo disponivel sob Licenca GPLv3 - http://www.gnu.org/copyleft/gpl.txt
