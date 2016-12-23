@@ -1,4 +1,4 @@
-#N canvas 10 54 1397 393 10;
+#N canvas 15 287 1397 393 10;
 #X obj 80 50 cnv 15 250 48 empty empty empty 20 12 0 14 -261682 -66577
 0;
 #X obj 1079 182 inlet~ MASTER_LEFT;
@@ -72,7 +72,7 @@
 #X obj 39 182 inlet~ 1_L;
 #X obj 208 72 bng 20 250 50 0 \$0-start \$0-startin REC 25 11 0 10
 -258113 -262144 -1;
-#X symbolatom 86 73 15 0 0 0 - #0-nomein #0-nome;
+#X symbolatom 86 73 15 0 0 0 - #0-nomein #0-nome, f 15;
 #X obj 257 72 bng 20 250 50 0 \$0-stop \$0-stopin STOP 25 11 0 10 -86277
 -262144 -1;
 #X obj 314 82 tgl 10 0 \$0-teclado \$0-tecladoin k 3 -7 0 10 -262144
@@ -130,7 +130,7 @@
 #X msg 374 94 start;
 #X msg 661 94 stop;
 #X obj 634 43 t b b;
-#X floatatom 181 73 2 0 0 0 - #0-pistain #0-pista;
+#X floatatom 181 73 2 0 0 0 - #0-pistain #0-pista, f 2;
 #X obj 555 37 r \$0-pista;
 #X obj 540 60 f;
 #X obj 540 105 s \$0-pistain;
@@ -218,7 +218,7 @@
 #X connect 17 0 2 0;
 #X connect 18 0 10 1;
 #X restore 419 297 pd controle;
-#N canvas 644 148 705 418 controle 0;
+#N canvas 643 148 705 418 controle 0;
 #X obj 54 373 outlet;
 #X obj 92 326 r \$0-controle_master;
 #X obj 453 373 outlet;
@@ -229,7 +229,6 @@
 #X obj 483 126 unpack;
 #X obj 504 28 inlet numero_camadas;
 #X obj 54 30 r \$0-name_trigger;
-#X obj 54 84 symbol /Users/brunorohde/Desktop/sessions/camadas/;
 #X obj 54 53 t b b;
 #X obj 483 80 list;
 #X obj 54 135 list append audio;
@@ -237,27 +236,28 @@
 #X obj 54 187 list append 1;
 #X obj 129 164 r \$0-pista;
 #X msg 453 289 open \$1\$2_\$3_\$4.wav;
-#X obj 351 53 r \$0-dir;
+#X obj 345 53 r \$0-dir;
+#X obj 54 84 symbol /home/brunorohde/Desktop/sessions/camadas/;
 #X connect 1 0 0 0;
 #X connect 3 0 2 0;
-#X connect 4 0 13 1;
-#X connect 5 0 14 0;
-#X connect 6 0 17 0;
+#X connect 4 0 12 1;
+#X connect 5 0 13 0;
+#X connect 6 0 16 0;
 #X connect 7 0 5 1;
 #X connect 7 1 6 1;
-#X connect 8 0 12 1;
-#X connect 9 0 11 0;
-#X connect 10 0 13 0;
-#X connect 11 0 10 0;
-#X connect 11 1 12 0;
-#X connect 12 0 7 0;
-#X connect 13 0 15 0;
-#X connect 14 0 0 0;
-#X connect 15 0 5 0;
-#X connect 15 0 6 0;
-#X connect 16 0 15 1;
-#X connect 17 0 2 0;
-#X connect 18 0 10 1;
+#X connect 8 0 11 1;
+#X connect 9 0 10 0;
+#X connect 10 0 18 0;
+#X connect 10 1 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 14 0;
+#X connect 13 0 0 0;
+#X connect 14 0 5 0;
+#X connect 14 0 6 0;
+#X connect 15 0 14 1;
+#X connect 16 0 2 0;
+#X connect 17 0 18 1;
+#X connect 18 0 12 0;
 #X restore 589 297 pd controle;
 #N canvas 644 148 705 418 controle 0;
 #X obj 54 373 outlet;

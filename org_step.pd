@@ -1,4 +1,4 @@
-#N canvas 61 402 1294 315 10;
+#N canvas 144 570 1294 315 10;
 #X obj 50 64 cnv 15 1210 23 empty \$0-bg empty 20 12 0 14 -261689 -262144
 0;
 #X obj 52 68 tgl 15 0 \$0-passo1 \$0-passo1in empty 17 7 0 10 -99865
@@ -12,13 +12,13 @@
 #X obj 112 68 tgl 15 0 \$0-passo5 \$0-passo5in empty 17 7 0 10 -191407
 -1 -1 0 1;
 #X obj 127 68 tgl 15 0 \$0-passo6 \$0-passo6in empty 17 7 0 10 -228856
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 142 68 tgl 15 0 \$0-passo7 \$0-passo7in empty 17 7 0 10 -228856
 -1 -1 0 1;
 #X obj 157 68 tgl 15 0 \$0-passo8 \$0-passo8in empty 17 7 0 10 -228856
 -1 -1 0 1;
 #X obj 172 68 tgl 15 0 \$0-passo9 \$0-passo9in empty 17 7 0 10 -191407
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 187 68 tgl 15 0 \$0-passo10 \$0-passo10in empty 17 7 0 10 -228856
 -1 -1 0 1;
 #X obj 202 68 tgl 15 0 \$0-passo11 \$0-passo11in empty 17 7 0 10 -228856
@@ -30,7 +30,7 @@
 #X obj 247 68 tgl 15 0 \$0-passo14 \$0-passo14in empty 17 7 0 10 -228856
 -1 -1 0 1;
 #X obj 262 68 tgl 15 0 \$0-passo15 \$0-passo15in empty 17 7 0 10 -228856
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 277 68 tgl 15 0 \$0-passo16 \$0-passo16in empty 17 7 0 10 -228856
 -1 -1 0 1;
 #X obj 292 68 tgl 15 0 \$0-passo17 \$0-passo17in empty 17 7 0 10 -99865
@@ -52,7 +52,7 @@
 #X obj 412 68 tgl 15 0 \$0-passo25 \$0-passo25in empty 17 7 0 10 -191407
 -1 -1 0 1;
 #X obj 427 68 tgl 15 0 \$0-passo26 \$0-passo26in empty 17 7 0 10 -228856
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 442 68 tgl 15 0 \$0-passo27 \$0-passo27in empty 17 7 0 10 -228856
 -1 -1 0 1;
 #X obj 457 68 tgl 15 0 \$0-passo28 \$0-passo28in empty 17 7 0 10 -228856
@@ -112,7 +112,7 @@
 #X obj 862 68 tgl 15 0 \$0-passo55 \$0-passo55in empty 17 7 0 10 -228856
 -1 -1 0 1;
 #X obj 877 68 tgl 15 0 \$0-passo56 \$0-passo56in empty 17 7 0 10 -228856
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 892 68 tgl 15 0 \$0-passo57 \$0-passo57in empty 17 7 0 10 -191407
 -1 -1 0 1;
 #X obj 907 68 tgl 15 0 \$0-passo58 \$0-passo58in empty 17 7 0 10 -228856
@@ -129,10 +129,10 @@
 -1 -1 0 1;
 #X obj 997 68 tgl 15 0 \$0-passo64 \$0-passo64in empty 17 7 0 10 -228856
 -1 -1 0 1;
-#X floatatom 1071 68 3 0 127 0 - #0-velin #0-vel;
-#X floatatom 1031 68 3 0 127 0 - #0-notain #0-nota;
+#X floatatom 1071 68 3 0 127 0 - #0-velin #0-vel, f 3;
+#X floatatom 1031 68 3 0 127 0 - #0-notain #0-nota, f 3;
 #X obj 85 267 outlet;
-#N canvas 20 164 1363 519 score 0;
+#N canvas 19 164 1363 519 score 0;
 #X obj 34 24 r \$0-passo1;
 #X obj 114 24 r \$0-passo2;
 #X obj 194 24 r \$0-passo3;
@@ -524,7 +524,7 @@
 #X connect 27 0 28 0;
 #X connect 28 0 1 0;
 #X restore 667 131 pd init;
-#N canvas 0 22 343 473 midi_write 0;
+#N canvas 0 50 343 473 midi_write 0;
 #X obj 67 157 unpack f f;
 #X obj 115 186 r \$0-nota;
 #X obj 100 207 ==;
@@ -569,7 +569,7 @@
 #X connect 17 0 16 0;
 #X connect 19 0 16 1;
 #X restore 667 206 pd midi_write;
-#N canvas 243 22 1060 815 edita_score 0;
+#N canvas 242 53 1060 807 edita_score 0;
 #X obj 377 293 pack f f;
 #X obj 422 270 + 1;
 #X obj 377 322 tabwrite \$0-score_temp2;
@@ -693,7 +693,6 @@
 #X obj 570 449 route paste_list control_note quad;
 #X obj 679 696 f;
 #X text 705 695 quad;
-#X obj 610 724 prepend;
 #X obj 570 558 list split 1;
 #X obj 583 676 list;
 #X obj 583 776 s \$0-flushscore;
@@ -707,7 +706,7 @@
 #X text 568 402 COLA SCORE A PARTIR DO TECLADO;
 #X obj 650 639 t b b b;
 #X obj 618 676 list;
-#N canvas 0 22 210 293 quadX4 0;
+#N canvas 0 50 210 293 quadX4 0;
 #X obj 59 30 inlet;
 #X obj 119 30 inlet;
 #X obj 59 249 outlet;
@@ -730,6 +729,7 @@
 #X connect 8 1 5 1;
 #X connect 9 0 2 0;
 #X restore 689 659 pd quadX4;
+#X obj 610 724 list prepend;
 #X connect 0 0 2 0;
 #X connect 1 0 0 1;
 #X connect 3 0 4 0;
@@ -861,39 +861,39 @@
 #X connect 115 0 47 0;
 #X connect 116 0 117 1;
 #X connect 117 0 118 1;
-#X connect 118 0 124 0;
+#X connect 118 0 123 0;
 #X connect 119 0 120 0;
 #X connect 120 0 118 0;
 #X connect 120 1 117 0;
 #X connect 120 2 121 1;
-#X connect 121 0 123 1;
+#X connect 121 0 137 1;
 #X connect 123 0 131 0;
-#X connect 124 0 132 0;
-#X connect 124 1 133 0;
-#X connect 125 0 127 0;
-#X connect 127 0 126 0;
-#X connect 127 1 123 0;
-#X connect 128 0 123 1;
-#X connect 129 0 125 0;
-#X connect 129 1 128 0;
-#X connect 130 0 125 0;
-#X connect 130 1 121 0;
-#X connect 132 0 129 0;
-#X connect 132 1 130 0;
-#X connect 132 2 135 0;
-#X connect 133 0 125 1;
-#X connect 133 1 137 1;
-#X connect 135 0 136 0;
-#X connect 135 1 128 0;
-#X connect 135 2 137 0;
-#X connect 136 0 127 0;
-#X connect 137 0 136 1;
+#X connect 123 1 132 0;
+#X connect 124 0 126 0;
+#X connect 126 0 125 0;
+#X connect 126 1 137 0;
+#X connect 127 0 137 1;
+#X connect 128 0 124 0;
+#X connect 128 1 127 0;
+#X connect 129 0 124 0;
+#X connect 129 1 121 0;
+#X connect 131 0 128 0;
+#X connect 131 1 129 0;
+#X connect 131 2 134 0;
+#X connect 132 0 124 1;
+#X connect 132 1 136 1;
+#X connect 134 0 135 0;
+#X connect 134 1 127 0;
+#X connect 134 2 136 0;
+#X connect 135 0 126 0;
+#X connect 136 0 135 1;
+#X connect 137 0 130 0;
 #X restore 667 181 pd edita_score;
 #X obj 1106 68 bng 15 250 50 0 \$0-edit \$0-edit_in S 21 8 0 10 -232576
 -262144 -1;
 #X obj 1140 68 bng 15 250 50 0 \$0-open_vel \$0-open_vel_in V 21 8
 0 10 -204800 -1 -1;
-#N canvas 0 22 369 170 janelas 0;
+#N canvas 0 50 369 170 janelas 0;
 #X msg 69 80 vis 1;
 #X obj 69 58 r \$0-open_vel;
 #X text 82 39 JANELA VEL;
@@ -909,7 +909,7 @@
 #X restore 785 131 pd janelas;
 #N canvas 634 173 247 361 compassos 0;
 #X obj 45 35 inlet passo;
-#N canvas 0 22 1385 240 compasso1 0;
+#N canvas 0 50 1385 240 compasso1 0;
 #X obj 42 128 spigot;
 #X obj 122 128 spigot;
 #X obj 202 128 spigot;
@@ -995,7 +995,7 @@
 #X connect 34 14 14 0;
 #X connect 34 15 15 0;
 #X restore 45 95 pd compasso1;
-#N canvas 0 22 1385 240 compasso2 0;
+#N canvas 0 50 1385 240 compasso2 0;
 #X obj 42 128 spigot;
 #X obj 122 128 spigot;
 #X obj 202 128 spigot;
@@ -1082,7 +1082,7 @@
 #X connect 33 0 14 1;
 #X connect 34 0 15 1;
 #X restore 45 114 pd compasso2;
-#N canvas 0 22 1385 240 compasso3 0;
+#N canvas 0 50 1385 240 compasso3 0;
 #X obj 42 128 spigot;
 #X obj 122 128 spigot;
 #X obj 202 128 spigot;
@@ -1285,30 +1285,43 @@
 #X restore 85 192 pd compassos;
 #X obj 85 113 r \$1-passo_master;
 #X obj 85 242 r \$0-output_vel;
-#N canvas 567 268 256 307 remote_output 0;
-#X obj 156 36 r \$0-nota;
+#N canvas 564 268 373 311 remote_output 0;
+#X obj 186 36 r \$0-nota;
+#X msg 186 113 id \$2 float \$1;
 #X msg 49 92 0;
+#X obj 186 93 pack f f;
 #X obj 49 242 s \$1-step_seq;
 #X obj 49 139 route 0;
 #X obj 49 117 pack f f f;
 #X text 47 264 PRA RECEBER NO PAI;
+#X text 191 256 PRA ORG_AUDIO NO PAI;
 #X obj 49 36 r \$0-output_vel;
+#X obj 49 66 t b f f;
+#X obj 186 57 t f f;
 #X obj 49 202 spigot;
-#X obj 106 164 r \$0-hold;
-#X obj 106 185 == 0;
-#X obj 49 66 t b f;
-#X connect 0 0 4 1;
-#X connect 1 0 4 0;
-#X connect 3 0 7 0;
-#X connect 4 0 3 0;
-#X connect 6 0 10 0;
-#X connect 7 0 2 0;
-#X connect 8 0 9 0;
-#X connect 9 0 7 1;
-#X connect 10 0 1 0;
-#X connect 10 1 4 2;
+#X obj 186 202 spigot;
+#X obj 219 151 r \$0-hold;
+#X obj 219 172 == 0;
+#X obj 186 235 s \$1-org_step_seq_out;
+#X connect 0 0 11 0;
+#X connect 1 0 13 0;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 5 0 12 0;
+#X connect 6 0 5 0;
+#X connect 9 0 10 0;
+#X connect 10 0 2 0;
+#X connect 10 1 6 2;
+#X connect 10 2 3 0;
+#X connect 11 0 6 1;
+#X connect 11 1 3 1;
+#X connect 12 0 4 0;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 1;
+#X connect 15 0 12 1;
 #X restore 785 231 pd remote_output;
-#N canvas 75 27 969 192 \$0-velocidade 0;
+#N canvas 74 53 969 192 \$0-velocidade 0;
 #X obj 225 45 cnv 15 700 100 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 225 45 cnv 10 10 100 empty empty empty 20 12 0 14 -128992 -66577
@@ -1343,7 +1356,7 @@
 0;
 #X obj 881 45 cnv 10 10 100 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-velocidade 64 float 2;
 #X coords 0 1 64 0 700 100 1;
 #X restore 225 45 graph;
@@ -1351,10 +1364,10 @@
 #X msg 42 69 const 1;
 #X obj 42 160 s \$0-velocidade;
 #X msg 111 109 const \$1;
-#X floatatom 111 69 5 0 100 0 - - -;
+#X floatatom 111 69 5 0 100 0 - - -, f 5;
 #X obj 111 88 / 100;
 #X obj 42 41 r \$0-lb;
-#X floatatom 155 27 5 0 0 0 - #0-nota -;
+#X floatatom 155 27 5 0 0 0 - #0-nota -, f 5;
 #X text 124 27 NOTA;
 #X msg 42 136 resize 64;
 #X msg 42 89 const 0.9;
@@ -1368,7 +1381,7 @@
 #X connect 27 0 20 0;
 #X connect 28 0 20 0;
 #X restore 785 156 pd \$0-velocidade;
-#N canvas 403 367 253 191 \$0-edita_seq 0;
+#N canvas 402 395 253 191 \$0-edita_seq 0;
 #X obj 31 63 bng 15 250 50 0 \$0-random \$0-random_in RANDOM 21 8 0
 10 -262144 -1 -1;
 #X obj 116 63 bng 15 250 50 0 \$0-nada \$0-nada_in NADA 21 8 0 10 -258113
@@ -1381,14 +1394,15 @@
 -1 -1;
 #X obj 136 23 tgl 15 0 \$0-midi_write \$0-midi_write_in MIDI_WRITE
 21 8 0 10 -262144 -1 -1 0 1;
-#X floatatom 77 22 5 0 0 0 - #0-nota -;
+#X floatatom 77 22 5 0 0 0 - #0-nota -, f 5;
 #X text 46 22 NOTA;
 #X obj 160 122 bng 15 250 50 0 \$0-insert \$0-insert_in INSERE 21 8
 0 10 -262144 -1 -1;
-#X floatatom 131 121 3 0 0 0 - #0-intervalo_in #0-intervalo;
+#X floatatom 131 121 3 0 0 0 - #0-intervalo_in #0-intervalo, f 3;
 #X obj 160 149 bng 15 250 50 0 \$0-remove \$0-remove_in REMOVE 21 8
 0 10 -262144 -1 -1;
-#X floatatom 131 148 3 0 0 0 - #0-intervalo_r_in #0-intervalo_r;
+#X floatatom 131 148 3 0 0 0 - #0-intervalo_r_in #0-intervalo_r, f
+3;
 #X obj 34 85 hsl 50 12 0 1 0 0 \$0-random_sens \$0-random_sens_in empty
 -2 -8 0 10 -262144 -1 -1 2450 1;
 #X text 19 82 0;
@@ -1407,7 +1421,7 @@
 #X obj 1210 68 tgl 15 0 \$0-hold \$0-hold_in H 20 8 0 10 -258113 -262144
 -1 0 1;
 #X text 190 241 saída direta - velocity;
-#N canvas 256 152 903 383 controles 0;
+#N canvas 254 152 903 383 controles 0;
 #X obj 62 256 s \$0-notain;
 #X obj 142 256 s \$0-velin;
 #X obj 212 256 s \$0-swing_in;
@@ -1423,7 +1437,7 @@
 #X obj 419 256 s \$0-random_in;
 #X obj 660 286 s \$0-hold_in;
 #X obj 745 286 s \$0-random_sens_in;
-#N canvas 0 22 228 315 key_step 0;
+#N canvas 0 50 228 315 key_step 0;
 #X obj 49 34 inlet;
 #X msg 49 231 \; \$3-passo\$2in \$1;
 #X obj 49 101 + 0;
@@ -1445,7 +1459,7 @@
 #X connect 8 0 6 0;
 #X restore 385 316 pd key_step;
 #X obj 62 23 inlet;
-#N canvas 0 22 414 447 teclado_control 0;
+#N canvas 2 53 414 447 teclado_control 0;
 #X obj 106 399 outlet;
 #X obj 196 327 s \$0-bg;
 #X msg 196 280 color 17;
@@ -1526,7 +1540,7 @@ intervalo_r insert remove hold random_sens key_step;
 #X obj 605 34 s \$0-notain;
 #X obj 1242 69 bng 13 250 50 0 \$0-select \$0-select_in empty 17 7
 0 10 -4032 -1 -1;
-#N canvas 91 147 1056 683 comunica_modulos 0;
+#N canvas 90 81 1056 683 comunica_modulos 0;
 #X obj 103 164 f;
 #X obj 129 164 + 1;
 #X obj 81 142 until;
@@ -1593,7 +1607,7 @@ intervalo_r insert remove hold random_sens key_step;
 #X obj 791 549 tabread \$0-score;
 #X obj 740 430 f 64;
 #X obj 806 494 f 0;
-#X floatatom 836 478 5 0 0 0 - - -;
+#X floatatom 836 478 5 0 0 0 - - -, f 5;
 #X text 874 480 offset;
 #X msg 775 413 16;
 #X obj 740 549 del 30;

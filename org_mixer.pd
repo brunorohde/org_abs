@@ -1,4 +1,4 @@
-#N canvas 111 117 773 582 10;
+#N canvas 110 117 773 582 10;
 #X obj 62 47 inlet~ deckA_L;
 #X obj 162 47 inlet~ deckA_R;
 #X obj 292 47 inlet~ deckB_L;
@@ -206,7 +206,7 @@
 #X obj 49 85 route mix pan pvu pvu_sel vol ganho_a ganho_b;
 #X obj 469 140 s \$0-ganho_a_in;
 #X obj 573 140 s \$0-ganho_b_in;
-#N canvas 0 22 493 337 scala 0;
+#N canvas 0 50 493 337 scala 0;
 #X text 56 48 Made by Thomas Ouellet Fredericks for the ID collective
 ;
 #X text 58 68 tom@danslchamp.org;
@@ -233,7 +233,7 @@
 #X connect 13 0 12 0;
 #X connect 14 0 13 0;
 #X restore 49 140 pd scala;
-#N canvas 0 22 493 337 scala 0;
+#N canvas 0 50 493 337 scala 0;
 #X text 56 48 Made by Thomas Ouellet Fredericks for the ID collective
 ;
 #X text 58 68 tom@danslchamp.org;
@@ -273,9 +273,9 @@
 #X connect 11 0 1 0;
 #X connect 12 0 2 0;
 #X restore 522 83 pd controles;
-#X obj 327 433 r \$0-vol;
-#X obj 327 473 line~;
-#X msg 327 453 \$1 50;
+#X obj 327 390 r \$0-vol;
+#X obj 327 430 line~;
+#X msg 327 410 \$1 50;
 #X obj 239 490 *~;
 #X obj 272 490 *~;
 #X obj 62 113 s~ \$0-deckA_L;
@@ -419,6 +419,8 @@
 \, desenvolvido por brunorohde (brunorohde.wordpress.com / brunorohde@gmail.com)
 ;
 #X restore 658 17 pd LEIA-ME;
+#X obj 327 452 *~;
+#X obj 327 474 *~;
 #X connect 0 0 28 0;
 #X connect 1 0 28 1;
 #X connect 2 0 29 0;
@@ -430,8 +432,8 @@
 #X connect 8 1 17 0;
 #X connect 11 0 12 0;
 #X connect 13 0 15 0;
-#X connect 14 0 16 1;
-#X connect 14 0 17 1;
+#X connect 14 0 87 0;
+#X connect 14 0 87 1;
 #X connect 15 0 14 0;
 #X connect 16 0 4 0;
 #X connect 16 0 22 0;
@@ -467,4 +469,8 @@
 #X connect 72 0 78 0;
 #X connect 78 0 73 0;
 #X connect 78 0 74 0;
+#X connect 87 0 88 0;
+#X connect 87 0 88 1;
+#X connect 88 0 17 1;
+#X connect 88 0 16 1;
 #X coords 0 -1 1 1 330 145 2 125 160;

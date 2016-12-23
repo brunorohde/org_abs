@@ -1,7 +1,6 @@
-#N canvas 267 162 670 417 10;
+#N canvas 264 162 670 417 10;
 #X obj 200 70 cnv 15 120 27 empty empty empty 20 12 0 14 -261682 -66577
 0;
-#X obj 84 281 writesf~ 2;
 #X msg 248 264 start;
 #X msg 296 264 stop;
 #X obj 84 22 inlet~;
@@ -16,9 +15,7 @@
 #X obj 385 24 inlet;
 #X obj 160 382 outlet;
 #X obj 272 342 del 2000;
-#X msg 160 314 set caminho /Users/brunorohde/Desktop/sessions/audio\$1.wav
-;
-#X msg 160 359 caminho /Users/brunorohde/Desktop/sessions/audio1.wav
+#X msg 160 359 caminho /Users/brunorohde/Desktop/sessao_09_02_2015/audio1.wav
 ;
 #X obj 299 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -26,10 +23,9 @@
 #X msg 396 281 0;
 #X obj 330 24 inlet;
 #X obj 385 60 route start stop dir;
-#X obj 459 161 r \$0-dir;
+#X obj 399 161 r \$0-dir;
 #X obj 463 111 s \$0-dir;
 #X msg 210 226 open \$1audio\$2.wav;
-#X obj 210 181 symbol /Users/brunorohde/Desktop/sessions/;
 #X obj 210 203 pack s f;
 #X obj 191 144 t f b f;
 #X msg 206 45 1;
@@ -53,37 +49,41 @@
 \, desenvolvido por brunorohde (brunorohde.wordpress.com / brunorohde@gmail.com)
 ;
 #X restore 551 24 pd LEIA-ME;
-#X connect 2 0 1 0;
-#X connect 2 0 17 0;
-#X connect 3 0 1 0;
-#X connect 3 0 18 0;
-#X connect 4 0 1 0;
-#X connect 5 0 1 1;
-#X connect 6 0 7 1;
-#X connect 7 0 26 0;
-#X connect 8 0 2 0;
-#X connect 8 1 7 0;
-#X connect 9 0 8 0;
-#X connect 10 0 3 0;
-#X connect 10 0 13 0;
-#X connect 11 0 20 0;
-#X connect 13 0 15 0;
-#X connect 14 0 15 0;
-#X connect 15 0 12 0;
-#X connect 17 0 16 0;
-#X connect 18 0 16 0;
-#X connect 19 0 6 0;
-#X connect 20 0 9 0;
-#X connect 20 1 10 0;
-#X connect 20 2 34 0;
-#X connect 21 0 24 1;
-#X connect 23 0 1 0;
-#X connect 24 0 25 0;
-#X connect 25 0 23 0;
-#X connect 26 0 14 0;
-#X connect 26 1 24 0;
-#X connect 26 2 25 1;
-#X connect 27 0 6 0;
-#X connect 28 0 27 0;
-#X connect 34 0 22 0;
+#X msg 160 310 set caminho /Users/brunorohde/Desktop/sessao_09_02_2015/audio\$1.wav
+;
+#X obj 84 281 writesf~ 2;
+#X obj 210 181 symbol /home/brunorohde/Desktop/;
+#X connect 1 0 15 0;
+#X connect 1 0 34 0;
+#X connect 2 0 16 0;
+#X connect 2 0 34 0;
+#X connect 3 0 34 0;
+#X connect 4 0 34 1;
+#X connect 5 0 6 1;
+#X connect 6 0 23 0;
+#X connect 7 0 1 0;
+#X connect 7 1 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 2 0;
+#X connect 9 0 12 0;
+#X connect 10 0 18 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 15 0 14 0;
+#X connect 16 0 14 0;
+#X connect 17 0 5 0;
+#X connect 18 0 8 0;
+#X connect 18 1 9 0;
+#X connect 18 2 31 0;
+#X connect 19 0 35 1;
+#X connect 21 0 34 0;
+#X connect 22 0 21 0;
+#X connect 23 0 33 0;
+#X connect 23 1 35 0;
+#X connect 23 2 22 1;
+#X connect 24 0 5 0;
+#X connect 25 0 24 0;
+#X connect 31 0 20 0;
+#X connect 33 0 13 0;
+#X connect 35 0 22 0;
 #X coords 0 -1 1 1 120 27 2 200 70;
